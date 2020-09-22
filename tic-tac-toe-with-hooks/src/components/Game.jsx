@@ -11,7 +11,7 @@ const Game = () => {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
-  const winner = calculateWinner(history);
+  const winner = calculateWinner(history[stepNumber]);
 
   const handleClick = (i) => {
     const timeInHistory = history.slice(0, stepNumber + 1);
