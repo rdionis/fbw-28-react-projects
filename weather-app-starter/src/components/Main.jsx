@@ -30,14 +30,18 @@ const Main = () => {
   const api_call = async (e) => {
     e.preventDefault();
     const location = e.target.elements.location.value;
-    if (!location) return setError("Please enter location."), setWeather(null);
+    if (!location) return setError("Please enter location.");
+    setWeather(null);
     const API_KEY = "8e0aa905ce144f49bf1a5f4c95149722";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
-    const request = axios.get(url); //axios is a promise-based library
+    const request = axios.get(url);
+    //axios is a promise-based library
     const response = await request;
     setWeather(response.data.main);
+    console.log(response.data);
     setCity(response.data.name);
-    setError(null);
+    console.log(response.Error);
+    // setError(response);
   };
   weather && console.log(weather);
 
