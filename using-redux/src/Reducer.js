@@ -1,4 +1,5 @@
 const initialState = 0;
+
 export const Reducer = (state = initialState, action) => {
   switch (action.type) {
     case "increment":
